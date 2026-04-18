@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isaac G. Collette — Finance &amp; Business Development</title>
+  <meta name="description" content="Isaac G. Collette — Director of Business Development at Glafabra Therapeutics. Biotech analyst, equity researcher, and capital markets strategist.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     CURSOR
+════════════════════════════════════════════ -->
+<div class="cursor" id="js-cursor"></div>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav class="navbar" id="js-nav" aria-label="Primary navigation">
+  <a href="#" class="nav-logo" aria-label="Isaac G. Collette home">
+    IGC<span class="cursor-blink" aria-hidden="true"></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Expertise</a></li>
+    <li><a href="#experience">Work</a></li>
+    <li><a href="#projects">Ventures</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-labelledby="hero-name">
+
+  <div class="hero-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="scanlines"  aria-hidden="true"></div>
+  <div class="hero-grid"  aria-hidden="true" id="js-grid"></div>
+
+  <div class="hero-corner tl" aria-hidden="true"></div>
+  <div class="hero-corner tr" aria-hidden="true"></div>
+  <div class="hero-corner bl" aria-hidden="true"></div>
+  <div class="hero-corner br" aria-hidden="true"></div>
+
+  <div class="hero-badge" id="js-badge" aria-live="polite">
+    <span class="hero-badge-dot" aria-hidden="true"></span>
+    Open to full-time opportunities
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-name" id="hero-name" data-text="COLLETTE">COLLETTE</h1>
+
+    <p class="hero-sub" id="js-sub" aria-live="polite">
+      <span class="typed" id="js-typed"></span><span class="cursor-type" aria-hidden="true"></span>
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="btn btn-fill"><span>View Work</span></a>
+      <a href="#contact"    class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" id="js-scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════ -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="s-label">About</div>
+    <h2 class="s-title rev" id="about-title">
+      Where capital<br>meets biology.
+    </h2>
+
+    <div class="about-grid">
+
+      <div class="about-photo rev">
+        <div class="about-photo-bar" aria-hidden="true">
+          <div class="term-wdots">
+            <span class="term-wdot red"></span>
+            <span class="term-wdot yellow"></span>
+            <span class="term-wdot green"></span>
+          </div>
+          <span class="about-photo-label">IGC_HEADSHOT.JPG</span>
+        </div>
+        <img src="1768505163503.jpg" alt="Isaac G. Collette" class="about-photo-img">
+      </div>
+
+      <div class="about-right">
+        <div class="about-bio rev">
+          <p>
+            I build theses at the intersection of <span class="accent-word">biotech science</span>
+            and fundamental finance. With 6+ years of equity research experience and deep roots
+            in the Pacific Northwest, I approach markets the way a scientist approaches a lab —
+            with rigor, skepticism, and a hunger for first-principles understanding.
+          </p>
+          <p>
+            Currently serving as <span class="accent-word">Director of Business Development</span>
+            at Glafabra Therapeutics, where I author private placement memorandums and drive
+            strategic partnerships in the rare disease space. Simultaneously contracted as an
+            analyst at Rogue Funds, managing $1M+ positions and building DCF models for
+            biotech investment targets.
+          </p>
+          <p>
+            Fluent in Spanish. Finishing a BS in Genomics, Genetics, & Biotechnology at BYU.
+            Also the writer behind <span class="accent-word">Penguin Capital</span> — a biotech
+            stock research blog.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card rev">
+            <span class="stat-n">06+</span>
+            <span class="stat-lbl">Years in Equities</span>
+          </div>
+          <div class="stat-card rev">
+            <span class="stat-n">$1M+</span>
+            <span class="stat-lbl">AUM Managed</span>
+          </div>
+          <div class="stat-card rev">
+            <span class="stat-n">3.80</span>
+            <span class="stat-lbl">GPA at BYU</span>
+          </div>
+          <div class="stat-card rev">
+            <span class="stat-n">2</span>
+            <span class="stat-lbl">Active Roles</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EDUCATION
+════════════════════════════════════════════ -->
+<section class="section education" id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="s-label">Education</div>
+    <h2 class="s-title rev" id="edu-title">
+      Academic<br>Foundation.
+    </h2>
+
+    <div class="edu-grid">
+
+      <!-- BYU Terminal File -->
+      <div class="term-file rev" role="article" aria-label="Brigham Young University">
+        <div class="term-titlebar">
+          <div class="term-wdots" aria-hidden="true">
+            <span class="term-wdot red"></span>
+            <span class="term-wdot yellow"></span>
+            <span class="term-wdot green"></span>
+          </div>
+          <span class="term-fname">BYU_TRANSCRIPT.TXT</span>
+          <span class="term-path-label">~/education/</span>
+        </div>
+        <div class="term-body">
+          <div class="term-prompt">cat BYU_TRANSCRIPT.TXT</div>
+          <pre class="term-content"><span class="term-key">INSTITUTION</span>  Brigham Young University
+<span class="term-key">LOCATION   </span>  Provo, UT
+<span class="term-key">DEGREE     </span>  B.S. Genomics, Genetics, &amp; Biotechnology
+<span class="term-key">DURATION   </span>  Sept 2025 — Apr 2028
+<span class="term-rule">─────────────────────────────────────</span>
+<span class="term-key">GPA        </span>  3.80 / 4.00
+<span class="term-key">ACT        </span>  31 / 36
+<span class="term-rule">─────────────────────────────────────</span>
+<span class="term-dim">·</span> Finance Society Member
+<span class="term-dim">·</span> Finance &amp; Accounting Coursework
+<span class="term-dim">·</span> <span class="term-key">STATUS</span>: IN PROGRESS</pre>
+        </div>
+      </div>
+
+      <!-- CBC Terminal File -->
+      <div class="term-file rev" role="article" aria-label="Columbia Basin College">
+        <div class="term-titlebar">
+          <div class="term-wdots" aria-hidden="true">
+            <span class="term-wdot red"></span>
+            <span class="term-wdot yellow"></span>
+            <span class="term-wdot green"></span>
+          </div>
+          <span class="term-fname">CBC_TRANSCRIPT.TXT</span>
+          <span class="term-path-label">~/education/</span>
+        </div>
+        <div class="term-body">
+          <div class="term-prompt">cat CBC_TRANSCRIPT.TXT</div>
+          <pre class="term-content"><span class="term-key">INSTITUTION</span>  Columbia Basin College
+<span class="term-key">LOCATION   </span>  Richland, WA
+<span class="term-key">DEGREE     </span>  A.S. Business Administration
+<span class="term-key">DURATION   </span>  Sept 2021 — May 2023
+<span class="term-rule">─────────────────────────────────────</span>
+<span class="term-key">GPA        </span>  3.78 / 4.00
+<span class="term-rule">─────────────────────────────────────</span>
+<span class="term-dim">·</span> Business &amp; Accounting Coursework
+<span class="term-dim">·</span> <span class="term-key">STATUS</span>: COMPLETED ✓</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERTISE (Skills)
+════════════════════════════════════════════ -->
+<section class="section skills" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="s-label">Expertise</div>
+    <h2 class="s-title rev" id="skills-title">
+      Analytical<br>Arsenal.
+    </h2>
+
+    <div class="skills-grid">
+
+      <!-- Panel 1 — Finance -->
+      <div class="skill-panel rev" aria-label="Financial Analysis Skills">
+        <div class="panel-head">
+          <span class="pdot on" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span>// Financial Analysis</span>
+        </div>
+        <div class="panel-body">
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">DCF / Intrinsic Valuation</span>
+              <span class="sk-pct">88%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="88"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Fundamental Analysis</span>
+              <span class="sk-pct">92%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="92"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Risk Assessment</span>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="85"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Excel Financial Modeling</span>
+              <span class="sk-pct">90%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="90"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2 — Research & Strategy -->
+      <div class="skill-panel rev" aria-label="Research and Strategy Skills">
+        <div class="panel-head">
+          <span class="pdot on" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span>// Research &amp; Strategy</span>
+        </div>
+        <div class="panel-body">
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Market Research</span>
+              <span class="sk-pct">93%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="93"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Competitive Analysis</span>
+              <span class="sk-pct">88%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="88"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Equity Thesis Development</span>
+              <span class="sk-pct">91%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="91"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Biotech Sector (Rare Disease)</span>
+              <span class="sk-pct">84%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="84"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3 — Business Development -->
+      <div class="skill-panel rev" aria-label="Business Development and Communication Skills">
+        <div class="panel-head">
+          <span class="pdot on" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span class="pdot" aria-hidden="true"></span>
+          <span>// Biz Dev &amp; Comms</span>
+        </div>
+        <div class="panel-body">
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">PPM / Fundraising Docs</span>
+              <span class="sk-pct">90%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="90"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Investor Relations</span>
+              <span class="sk-pct">83%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="83"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Spanish (Fluent)</span>
+              <span class="sk-pct">97%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="97"></div>
+            </div>
+          </div>
+          <div class="sk-row">
+            <div class="sk-meta">
+              <span class="sk-name">Financial Writing / Research</span>
+              <span class="sk-pct">89%</span>
+            </div>
+            <div class="sk-bar" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-fill" data-w="89"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════ -->
+<section class="section experience" id="experience" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="s-label">Experience</div>
+    <h2 class="s-title rev" id="exp-title">
+      Where I've<br>operated.
+    </h2>
+
+    <div class="timeline">
+
+      <article class="tl-item" aria-label="Glafabra Therapeutics role">
+        <div class="tl-bracket">[ JAN 2026 → PRESENT ]</div>
+        <h3 class="tl-role">Director of Business Development</h3>
+        <p class="tl-company">Glafabra Therapeutics — Salt Lake City, UT</p>
+        <div class="tl-card">
+          <p>
+            Authored comprehensive private placement memorandums resulting in a raise of
+            $300,000 pre-seed funding, with frameworks built to support future rounds.
+            Conducted comprehensive market research and competitive analysis for the Fabry
+            disease therapeutic space to identify and secure strategic partnership opportunities.
+          </p>
+          <div class="tags">
+            <span class="tag">PPM Authoring</span>
+            <span class="tag">Capital Raising</span>
+            <span class="tag">Market Research</span>
+            <span class="tag">Rare Disease</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" aria-label="Rogue Funds role">
+        <div class="tl-bracket">[ AUG 2025 → PRESENT ]</div>
+        <h3 class="tl-role">Contracted Analyst</h3>
+        <p class="tl-company">Rogue Funds LLC — Raleigh, NC</p>
+        <div class="tl-card">
+          <p>
+            Managed $1 million+ position in a publicly traded uranium enrichment company,
+            conducting ongoing market research, fundamental analysis, and risk assessment.
+            Identified and evaluated biotech investment opportunities ($50,000–$300,000 deal
+            size), driving +5% in total fund alpha in 2025. Constructed detailed DCF models
+            for biotech targets to determine intrinsic valuation.
+          </p>
+          <div class="tags">
+            <span class="tag">DCF Modeling</span>
+            <span class="tag">Biotech</span>
+            <span class="tag">Uranium / Energy</span>
+            <span class="tag">Portfolio Management</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" aria-label="Mission service role">
+        <div class="tl-bracket">[ JULY 2023 → JUNE 2025 ]</div>
+        <h3 class="tl-role">Volunteer Representative</h3>
+        <p class="tl-company">The Church of Jesus Christ of Latter-day Saints — Puebla, Mexico</p>
+        <div class="tl-card">
+          <p>
+            Led groups of 11+ representatives in establishing goals and tracking weekly key
+            performance indicators. Assigned to train 3 representatives, supporting their
+            professional development and helping them build measurable personal goals.
+            Operated entirely in Spanish across two years in-field.
+          </p>
+          <div class="tags">
+            <span class="tag">Leadership</span>
+            <span class="tag">Team Management</span>
+            <span class="tag">Spanish</span>
+            <span class="tag">Goal Setting</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VENTURES (Projects)
+════════════════════════════════════════════ -->
+<section class="section projects" id="projects" aria-labelledby="proj-title">
+  <div class="container">
+    <div class="s-label">Ventures</div>
+    <h2 class="s-title rev" id="proj-title">
+      Selected<br>Work.
+    </h2>
+
+    <div class="bento">
+
+      <article class="proj-card rev" aria-label="Penguin Capital blog">
+        <div class="proj-thumb">
+          <img src="html/PenguinCapital.jpg" alt="Penguin Capital biotech research blog" class="proj-thumb-photo">
+        </div>
+        <div class="proj-info">
+          <div class="proj-idx">[ 01 / 04 ]</div>
+          <h3 class="proj-title">Penguin Capital</h3>
+          <p class="proj-desc">
+            A biotech stock research blog delivering in-depth investment theses,
+            fundamental analysis, and sector commentary. Published on Substack with a
+            focused readership in biotech equity markets.
+          </p>
+          <div class="tags">
+            <span class="tag">Substack</span>
+            <span class="tag">Biotech Research</span>
+            <span class="tag">Financial Writing</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card rev" aria-label="Glafabra pre-seed raise">
+        <div class="proj-info">
+          <div class="proj-idx">[ 02 / 04 ]</div>
+          <h3 class="proj-title">$300K Pre-Seed Round — Glafabra</h3>
+          <p class="proj-desc">
+            Authored the private placement memorandum and investor-facing documentation
+            that supported Glafabra Therapeutics' $300,000 pre-seed capital raise in the
+            Fabry disease therapeutic space.
+          </p>
+          <div class="tags">
+            <span class="tag">PPM</span>
+            <span class="tag">Fundraising</span>
+            <span class="tag">Rare Disease</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card rev" aria-label="Uranium enrichment position">
+        <div class="proj-info">
+          <div class="proj-idx">[ 03 / 04 ]</div>
+          <h3 class="proj-title">$1M+ Uranium Position — Rogue Funds</h3>
+          <p class="proj-desc">
+            Managed and monitored a seven-figure position in a publicly traded uranium
+            enrichment company. Delivered ongoing fundamental analysis, macro thesis updates,
+            and risk management recommendations.
+          </p>
+          <div class="tags">
+            <span class="tag">Equity Research</span>
+            <span class="tag">Uranium</span>
+            <span class="tag">Risk Management</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card rev" aria-label="Biotech DCF modeling">
+        <div class="proj-info">
+          <div class="proj-idx">[ 04 / 04 ]</div>
+          <h3 class="proj-title">Biotech DCF Model Suite</h3>
+          <p class="proj-desc">
+            Built a suite of detailed discount cash flow models across multiple biotech
+            investment targets at Rogue Funds, driving +5% fund alpha in 2025. Deal sizes
+            ranged from $50,000 to $300,000.
+          </p>
+          <div class="tags">
+            <span class="tag">DCF</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Valuation</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+    <div class="s-label" style="justify-content:center;">Contact</div>
+    <h2 class="contact-head rev" id="contact-title">
+      Let's build<br>something<br>extraordinary.
+    </h2>
+    <p class="contact-sub rev">
+      Available for full-time roles, contracted analysis,<br>
+      and strategic advisory engagements.
+    </p>
+    <div class="contact-links rev">
+      <a href="mailto:isaaccollette100@gmail.com" class="btn btn-fill">
+        <span>isaaccollette100@gmail.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">ISAAC G. COLLETTE</div>
+    <ul class="footer-links" role="list">
+      <li><a href="https://penguincapital.substack.com/" target="_blank" rel="noopener" aria-label="Penguin Capital Substack">Penguin Capital</a></li>
+      <li><a href="html/about.html" aria-label="About page">About</a></li>
+      <li><a href="html/gallery.html" aria-label="Gallery page">Gallery</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 — All systems operational.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     TERMINAL STATUS BAR
+════════════════════════════════════════════ -->
+<div class="status-bar" role="status" aria-live="polite" aria-label="System status">
+  <div class="st-item on">
+    <span class="st-dot" aria-hidden="true"></span>
+    SYS:ONLINE
+  </div>
+  <div class="st-item">LOC:PROVO·UT</div>
+  <div class="st-item">GPA:3.80</div>
+  <div class="st-item" id="js-clock">TIME:--:--:--</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
+<script>
+window.addEventListener('load', function () {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── Terminal Block Cursor ──────────────────────────────
+  const dot = document.getElementById('js-cursor');
+
+  document.addEventListener('mousemove', e => {
+    gsap.set(dot, { x: e.clientX, y: e.clientY });
+  });
+
+  // Pause blink animation while moving for authenticity
+  let blinkPause;
+  document.addEventListener('mousemove', () => {
+    dot.style.animationPlayState = 'paused';
+    dot.style.opacity = '.88';
+    clearTimeout(blinkPause);
+    blinkPause = setTimeout(() => {
+      dot.style.animationPlayState = 'running';
+      dot.style.opacity = '';
+    }, 120);
+  });
+
+  // ── Navbar morph ───────────────────────────────────────
+  const nav = document.getElementById('js-nav');
+  ScrollTrigger.create({
+    start: 'top -70',
+    onEnter:     () => nav.classList.add('scrolled'),
+    onLeaveBack: () => nav.classList.remove('scrolled'),
+  });
+
+  // ── Hero entrance ──────────────────────────────────────
+  gsap.set(['.hero-name', '#js-sub', '.hero-ctas'], { y: 40 });
+  gsap.set('#js-badge', { y: 16 });
+
+  gsap.context(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.to('#js-badge',      { opacity: 1, y: 0, duration: .9,  delay: .2  })
+      .to('.hero-name',     { opacity: 1, y: 0, duration: 1.1, skewY: 0   }, '-=.5')
+      .to('#js-sub',        { opacity: 1, y: 0, duration: .8               }, '-=.55')
+      .to('.hero-ctas',     { opacity: 1, y: 0, duration: .7               }, '-=.45')
+      .to('#js-scroll-cue', { opacity: .5,       duration: .8              }, '-=.3');
+
+    gsap.to('#js-grid', {
+      yPercent: 28,
+      ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+  }, '.hero');
+
+  document.addEventListener('mousemove', e => {
+    const xf = (e.clientX / window.innerWidth  - .5) * 28;
+    const yf = (e.clientY / window.innerHeight - .5) * 28;
+    gsap.to('.blob-1', { x: -xf,        y: -yf,       duration: 2.4, ease: 'power1.out' });
+    gsap.to('.blob-2', { x:  xf * .65,  y:  yf * .65, duration: 3,   ease: 'power1.out' });
+    gsap.to('.blob-3', { x:  xf * 1.1,  y: -yf * 1.1, duration: 3.6, ease: 'power1.out' });
+  });
+
+  // ── Typewriter ─────────────────────────────────────────
+  const roles  = ['Director of Business Development', 'Biotech Investment Analyst', 'Capital Markets Researcher', 'Finance & Strategy', 'Fluent in Spanish'];
+  const typeEl = document.getElementById('js-typed');
+  let rIdx = 0, cIdx = 0, del = false;
+
+  function tick() {
+    const word = roles[rIdx];
+    typeEl.textContent = del ? word.slice(0, cIdx - 1) : word.slice(0, cIdx + 1);
+    del ? cIdx-- : cIdx++;
+    if (!del && cIdx === word.length) { del = true; setTimeout(tick, 2200); return; }
+    if (del && cIdx === 0) { del = false; rIdx = (rIdx + 1) % roles.length; setTimeout(tick, 450); return; }
+    setTimeout(tick, del ? 48 : 95);
+  }
+  setTimeout(tick, 1800);
+
+  // ── Scroll reveal ──────────────────────────────────────
+  gsap.utils.toArray('.rev').forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 38 },
+      { opacity: 1, y: 0, duration: .95, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 87%', once: true } }
+    );
+  });
+
+  // ── Skill bars ─────────────────────────────────────────
+  document.querySelectorAll('.sk-fill').forEach(fill => {
+    const w = fill.dataset.w;
+    ScrollTrigger.create({
+      trigger: fill, start: 'top 92%', once: true,
+      onEnter: () => gsap.to(fill, { width: w + '%', duration: 1.6, ease: 'power3.out', delay: .15 })
+    });
+  });
+
+  // ── Timeline items ─────────────────────────────────────
+  document.querySelectorAll('.tl-item').forEach((item, i) => {
+    ScrollTrigger.create({
+      trigger: item, start: 'top 82%', once: true,
+      onEnter: () => {
+        item.classList.add('in');
+        gsap.to(item, { opacity: 1, x: 0, duration: .75, delay: i * .12, ease: 'power3.out' });
+      }
+    });
+  });
+
+  // ── Magnetic buttons ───────────────────────────────────
+  document.querySelectorAll('.btn, .nav-cta').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      gsap.to(btn, { x: (e.clientX - r.left - r.width  / 2) * .28,
+                     y: (e.clientY - r.top  - r.height / 2) * .28,
+                     duration: .3, ease: 'power2.out' });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { x: 0, y: 0, duration: .55, ease: 'elastic.out(1, .5)' });
+    });
+  });
+
+  // ── Clock ──────────────────────────────────────────────
+  const clockEl = document.getElementById('js-clock');
+  function tick2() {
+    const n = new Date();
+    clockEl.textContent = `TIME:${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+  }
+  setInterval(tick2, 1000);
+  tick2();
+
+  // ── Stat counters ──────────────────────────────────────
+  document.querySelectorAll('.stat-n').forEach(el => {
+    const raw = el.textContent.trim();
+    // Skip non-numeric or dollar values
+    if (raw.includes('$') || raw.includes('.') || isNaN(parseInt(raw))) return;
+    const num    = parseInt(raw);
+    const suffix = raw.replace(/\d/g, '');
+    ScrollTrigger.create({
+      trigger: el, start: 'top 85%', once: true,
+      onEnter: () => {
+        const obj = { v: 0 };
+        gsap.to(obj, { v: num, duration: 1.5, ease: 'power2.out',
+          onUpdate: () => { el.textContent = String(Math.round(obj.v)).padStart(2, '0') + suffix; }
+        });
+      }
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>

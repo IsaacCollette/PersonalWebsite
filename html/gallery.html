@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Isaac G. Collette</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <style>
+    .gallery-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r-sm);
+      border: 1px solid rgba(47,217,138,.15);
+      perspective: 1200px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: none;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      backface-visibility: hidden;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+    }
+
+    .slide-caption {
+      font-family: var(--font-px);
+      font-size: .38rem;
+      color: var(--accent);
+      letter-spacing: .15em;
+      padding: .75rem 1.25rem;
+      background: rgba(5,12,9,.8);
+      border-top: 1px solid rgba(47,217,138,.1);
+    }
+
+    .slide.turning-out { animation: pageOut .45s ease-in  forwards; transform-origin: left center; }
+    .slide.turning-in  { animation: pageIn  .45s ease-out forwards; transform-origin: left center; }
+
+    @keyframes pageOut {
+      0%   { transform: rotateY(0deg);   opacity: 1; }
+      100% { transform: rotateY(-90deg); opacity: 0; }
+    }
+    @keyframes pageIn {
+      0%   { transform: rotateY(90deg);  opacity: 0; }
+      100% { transform: rotateY(0deg);   opacity: 1; }
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding: .6rem 1rem;
+      border: 1px solid rgba(47,217,138,.12);
+      border-radius: var(--r-sm);
+      background: rgba(47,217,138,.03);
+    }
+
+    .carousel-btn {
+      font-family: var(--font-px);
+      font-size: .42rem;
+      letter-spacing: .12em;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid rgba(47,217,138,.3);
+      border-radius: 9999px;
+      padding: .55rem 1.2rem;
+      cursor: none;
+      transition: background .25s, box-shadow .25s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(47,217,138,.1);
+      box-shadow: 0 0 16px rgba(47,217,138,.25);
+    }
+
+    .carousel-counter {
+      font-family: var(--font-px);
+      font-size: .42rem;
+      color: rgba(234,247,240,.45);
+      letter-spacing: .15em;
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .thumb-strip img {
+      width: 72px;
+      height: 50px;
+      object-fit: cover;
+      cursor: none;
+      opacity: .45;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      transition: opacity .2s, border-color .2s;
+    }
+
+    .thumb-strip img.active,
+    .thumb-strip img:hover {
+      opacity: 1;
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="js-cursor"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="js-nav" aria-label="Primary navigation">
+  <a href="../index.html" class="nav-logo" aria-label="Isaac G. Collette home">
+    IGC<span class="cursor-blink" aria-hidden="true"></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#experience">Work</a></li>
+    <li><a href="../index.html#projects">Ventures</a></li>
+    <li><a href="about.html">About Page</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="hero-corner tl" aria-hidden="true"></div>
+  <div class="hero-corner tr" aria-hidden="true"></div>
+  <div class="hero-corner bl" aria-hidden="true"></div>
+  <div class="hero-corner br" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="hero-grid"  aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <div class="s-label">Gallery</div>
+    <h1 class="s-title" id="page-title" style="font-size: clamp(2.4rem, 6vw, 5.5rem);">
+      Field<br>Photos.
+    </h1>
+    <p class="page-hero-sub">Adélie penguins at Cape Royds, Antarctica — via <a href="https://penguinscience.com/gallery/" target="_blank" rel="noopener" style="color:var(--accent);">Penguin Science</a>.</p>
+  </div>
+</section>
+
+<!-- GALLERY CONTENT -->
+<section class="section" style="background: var(--dark);">
+  <div class="container">
+    <div class="gallery-wrap rev">
+
+      <div class="s-label" style="margin-bottom: 1.5rem;">// Field Photos</div>
+
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="track">
+
+          <div class="slide">
+            <img src="https://penguinscience.com/wp-content/uploads/2026/02/78706_011226B-scaled.jpg"
+                 alt="Penguin 78706 — 12 Jan 2026">
+            <p class="slide-caption">PENGUIN 78706 — 12 JAN 2026</p>
+          </div>
+
+          <div class="slide">
+            <img src="https://penguinscience.com/wp-content/uploads/2026/02/78706_011126-scaled.jpg"
+                 alt="Penguin 78706 — 11 Jan 2026">
+            <p class="slide-caption">PENGUIN 78706 — 11 JAN 2026</p>
+          </div>
+
+          <div class="slide">
+            <img src="https://penguinscience.com/wp-content/uploads/2026/02/76670_011226-scaled.jpg"
+                 alt="Penguin 76670 — 12 Jan 2026">
+            <p class="slide-caption">PENGUIN 76670 — 12 JAN 2026</p>
+          </div>
+
+          <div class="slide">
+            <img src="https://penguinscience.com/wp-content/uploads/2026/02/76670_011126-scaled.jpg"
+                 alt="Penguin 76670 — 11 Jan 2026">
+            <p class="slide-caption">PENGUIN 76670 — 11 JAN 2026</p>
+          </div>
+
+          <div class="slide">
+            <img src="https://penguinscience.com/wp-content/uploads/2026/02/06661_011226B-scaled.jpg"
+                 alt="Penguin 06661 — 12 Jan 2026">
+            <p class="slide-caption">PENGUIN 06661 — 12 JAN 2026</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="thumb-strip" id="thumbStrip"></div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn">&#8592; PREV</button>
+        <span class="carousel-counter" id="counter">01 / 05</span>
+        <button class="carousel-btn" id="nextBtn">NEXT &#8594;</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">ISAAC G. COLLETTE</div>
+    <ul class="footer-links" role="list">
+      <li><a href="https://penguincapital.substack.com/" target="_blank" rel="noopener" aria-label="Penguin Capital Substack">Penguin Capital</a></li>
+      <li><a href="about.html" aria-label="About page">About</a></li>
+      <li><a href="gallery.html" aria-label="Gallery page">Gallery</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 — All systems operational.</p>
+  </div>
+</footer>
+
+<!-- STATUS BAR -->
+<div class="status-bar" role="status" aria-live="polite" aria-label="System status">
+  <div class="st-item on">
+    <span class="st-dot" aria-hidden="true"></span>
+    SYS:ONLINE
+  </div>
+  <div class="st-item">LOC:PROVO·UT</div>
+  <div class="st-item">GPA:3.80</div>
+  <div class="st-item" id="js-clock">TIME:--:--:--</div>
+</div>
+
+<script>
+  const slides     = Array.from(document.querySelectorAll('.slide'));
+  const counter    = document.getElementById('counter');
+  const thumbStrip = document.getElementById('thumbStrip');
+  let current = 0, animating = false;
+
+  slides.forEach((slide, i) => {
+    const src = slide.querySelector('img').src;
+    const alt = slide.querySelector('img').alt;
+    const t = document.createElement('img');
+    t.src = src; t.alt = alt;
+    if (i === 0) t.classList.add('active');
+    t.addEventListener('click', () => goTo(i));
+    thumbStrip.appendChild(t);
+  });
+
+  function pad(n) { return String(n + 1).padStart(2, '0'); }
+  function updateCounter() { counter.textContent = `${pad(current)} / ${pad(slides.length - 1)}`; }
+  function updateThumbs() { thumbStrip.querySelectorAll('img').forEach((t, i) => t.classList.toggle('active', i === current)); }
+
+  function goTo(next) {
+    if (animating || next === current) return;
+    animating = true;
+    const outSlide = slides[current], inSlide = slides[next];
+    slides.forEach(s => s.style.display = 'none');
+    outSlide.style.display = 'block';
+    inSlide.style.display  = 'block';
+    outSlide.classList.add('turning-out');
+    outSlide.addEventListener('animationend', function onOut() {
+      outSlide.removeEventListener('animationend', onOut);
+      outSlide.style.display = 'none';
+      outSlide.classList.remove('turning-out');
+      inSlide.classList.add('turning-in');
+      inSlide.addEventListener('animationend', function onIn() {
+        inSlide.removeEventListener('animationend', onIn);
+        inSlide.classList.remove('turning-in');
+        current = next;
+        updateCounter(); updateThumbs();
+        animating = false;
+      }, { once: true });
+    }, { once: true });
+  }
+
+  function init() {
+    slides.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+    updateCounter();
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo((current + 1) % slides.length));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  goTo((current - 1 + slides.length) % slides.length);
+    if (e.key === 'ArrowRight') goTo((current + 1) % slides.length);
+  });
+  init();
+</script>
+
+<script>
+window.addEventListener('load', function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const dot = document.getElementById('js-cursor');
+  document.addEventListener('mousemove', e => {
+    gsap.set(dot, { x: e.clientX, y: e.clientY });
+  });
+
+  const nav = document.getElementById('js-nav');
+  ScrollTrigger.create({
+    start: 'top -70',
+    onEnter:     () => nav.classList.add('scrolled'),
+    onLeaveBack: () => nav.classList.remove('scrolled'),
+  });
+
+  gsap.utils.toArray('.rev').forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 38 },
+      { opacity: 1, y: 0, duration: .95, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 87%', once: true } }
+    );
+  });
+
+  document.querySelectorAll('.carousel-btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      gsap.to(btn, { x: (e.clientX - r.left - r.width  / 2) * .28,
+                     y: (e.clientY - r.top  - r.height / 2) * .28,
+                     duration: .3, ease: 'power2.out' });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { x: 0, y: 0, duration: .55, ease: 'elastic.out(1, .5)' });
+    });
+  });
+
+  const clockEl = document.getElementById('js-clock');
+  function tick() {
+    const n = new Date();
+    clockEl.textContent = `TIME:${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+  }
+  setInterval(tick, 1000);
+  tick();
+});
+</script>
+
+</body>
+</html>

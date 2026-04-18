@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Isaac G. Collette</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<div class="cursor" id="js-cursor"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="js-nav" aria-label="Primary navigation">
+  <a href="../index.html" class="nav-logo" aria-label="Isaac G. Collette home">
+    IGC<span class="cursor-blink" aria-hidden="true"></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#experience">Work</a></li>
+    <li><a href="../index.html#projects">Ventures</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="hero-corner tl" aria-hidden="true"></div>
+  <div class="hero-corner tr" aria-hidden="true"></div>
+  <div class="hero-corner bl" aria-hidden="true"></div>
+  <div class="hero-corner br" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="hero-grid"  aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <div class="s-label">About</div>
+    <h1 class="s-title" id="page-title" style="font-size: clamp(2.4rem, 6vw, 5.5rem);">
+      Penguin<br>Book.
+    </h1>
+    <p class="page-hero-sub">What is this place, anyway?</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="section" style="background: var(--dark);">
+  <div class="container">
+
+    <div class="term-file rev" role="article" aria-label="Purpose">
+      <div class="term-titlebar">
+        <div class="term-wdots" aria-hidden="true">
+          <span class="term-wdot red"></span>
+          <span class="term-wdot yellow"></span>
+          <span class="term-wdot green"></span>
+        </div>
+        <span class="term-fname">PURPOSE.TXT</span>
+        <span class="term-path-label">~/about/</span>
+      </div>
+      <div class="term-body">
+        <div class="term-prompt">cat PURPOSE.TXT</div>
+        <pre class="term-content">Penguin Book is a personal lab notebook. A random place to jot
+things down, experiment, and keep track of whatever happens to
+be interesting at the time.
+
+Think of it less like a polished website and more like an open
+notebook left on a desk.</pre>
+      </div>
+    </div>
+
+    <div class="term-file rev" role="article" aria-label="Why Penguin Book" style="margin-top: 1.5rem;">
+      <div class="term-titlebar">
+        <div class="term-wdots" aria-hidden="true">
+          <span class="term-wdot red"></span>
+          <span class="term-wdot yellow"></span>
+          <span class="term-wdot green"></span>
+        </div>
+        <span class="term-fname">WHY_PENGUIN.TXT</span>
+        <span class="term-path-label">~/about/</span>
+      </div>
+      <div class="term-body">
+        <div class="term-prompt">cat WHY_PENGUIN.TXT</div>
+        <pre class="term-content">Honestly? No deep reason. It sounded fun. Penguins are great.
+The name stuck.</pre>
+      </div>
+    </div>
+
+    <div class="term-file rev" role="article" aria-label="What you will find here" style="margin-top: 1.5rem;">
+      <div class="term-titlebar">
+        <div class="term-wdots" aria-hidden="true">
+          <span class="term-wdot red"></span>
+          <span class="term-wdot yellow"></span>
+          <span class="term-wdot green"></span>
+        </div>
+        <span class="term-fname">CONTENTS.TXT</span>
+        <span class="term-path-label">~/about/</span>
+      </div>
+      <div class="term-body">
+        <div class="term-prompt">cat CONTENTS.TXT</div>
+        <pre class="term-content"><span class="term-dim">·</span> Notes and observations, roughly in the order they happened
+<span class="term-dim">·</span> Experiments — this whole thing is an experiment
+<span class="term-dim">·</span> Cool things worth remembering
+<span class="term-dim">·</span> Whatever else seems worth writing down</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">ISAAC G. COLLETTE</div>
+    <ul class="footer-links" role="list">
+      <li><a href="https://penguincapital.substack.com/" target="_blank" rel="noopener" aria-label="Penguin Capital Substack">Penguin Capital</a></li>
+      <li><a href="about.html" aria-label="About page">About</a></li>
+      <li><a href="gallery.html" aria-label="Gallery page">Gallery</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 — All systems operational.</p>
+  </div>
+</footer>
+
+<!-- STATUS BAR -->
+<div class="status-bar" role="status" aria-live="polite" aria-label="System status">
+  <div class="st-item on">
+    <span class="st-dot" aria-hidden="true"></span>
+    SYS:ONLINE
+  </div>
+  <div class="st-item">LOC:PROVO·UT</div>
+  <div class="st-item">GPA:3.80</div>
+  <div class="st-item" id="js-clock">TIME:--:--:--</div>
+</div>
+
+<script>
+window.addEventListener('load', function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const dot = document.getElementById('js-cursor');
+  document.addEventListener('mousemove', e => {
+    gsap.set(dot, { x: e.clientX, y: e.clientY });
+  });
+
+  const nav = document.getElementById('js-nav');
+  ScrollTrigger.create({
+    start: 'top -70',
+    onEnter:     () => nav.classList.add('scrolled'),
+    onLeaveBack: () => nav.classList.remove('scrolled'),
+  });
+
+  gsap.utils.toArray('.rev').forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 38 },
+      { opacity: 1, y: 0, duration: .95, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 87%', once: true } }
+    );
+  });
+
+  const clockEl = document.getElementById('js-clock');
+  function tick() {
+    const n = new Date();
+    clockEl.textContent = `TIME:${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+  }
+  setInterval(tick, 1000);
+  tick();
+});
+</script>
+
+</body>
+</html>
